@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block head_block %}
+{% if entry %}
+{%if entry.strtags%}<meta name="Keywords" content="{{entry.strtags|escape}}">{%endif%}
+{%if entry.excerpt%} <meta name="Description" content="{{entry.excerpt|escape}}">{%endif%}
+{% endif %}
+<script src="/static/js/jquery.form.utf8.js"></script>
+<script type="text/javascript" src="/static/js/jquery.cookie.js"></script>
+{% endblock %}
+
+{% block content %}
+{% include "sidebar.html" %}
+<div id="wrapper" class="clearfix" > 
+<div id="maincol" >
+
+{% if entry %}
+<h2 class="contentheader"><a href="/{{ entry.link }}" rel="bookmark" title="Permanent Link to {{entry.title}}">{{entry.title}} </a></h2>
+
+<!--
+{%if self.is_admin%}<h4><a class="post-edit-link" href="{{entry.edit_url}}" title="Edit Blog">Edit it</a></h4>{%endif%}
+-->
+<p>{{ entry.content }}</p>
+<!--{{entry|excerpt_more:"(..More)"}}-->
+{% include "comments.html" %}
+{%endif%}
+
+</div>
+</div>
+{% endblock %}

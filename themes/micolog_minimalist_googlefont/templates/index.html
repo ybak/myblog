@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+{% include "sidebar.html" %}
+<div id="wrapper" class="clearfix" > 
+<div id="maincol" >
+{% for entry in entries %}
+<h2 class="contentheader">{{ entry.title }}</h2>
+<div class="content">
+<div class="permalink"><a href="/{{ entry.link }}" rel="bookmark" title="Permanent Link to {{ entry.title }}">Click me for more content</a></div>
+<p>
+{{entry|excerpt_more:"(..More)"}}
+</p>
+<div id="postinfotext">
+Posted: {{ entry.date|datetz:"F jS, Y " }}<br/>
+Categories: {%for cate in entry.categories%} 
+	<a href="/category/{{cate.slug}}">{{cate.name}}</a> {%endfor%}<br/>
+{% if entry.strtags %}
+Tags: {%for tag in entry.tags%}
+    <a href="/tag/{{tag|urlencode}}">{{tag}}</a>{%endfor%}<br/>
+{% endif %}
+Read times: {{entry.readtimes}}<br/>
+<a href="/{{entry.link}}#comments">Comments: {{entry.commentcount}}</a>
+</div>
+
+</div>	
+{% endfor %}
+
+<div class="navigation">
+<span class="prevlink">{% if show_prev %}<a href="/page/{{ pageindex|add:"-1" }}"" >&laquo;Previous Page</a>{% endif %}</span>
+
+<span class="nextlink">{% if show_next %}<a href="/page/{{ pageindex|add:"1"}}"" >&raquo;Next Page</a>{% endif %}</span>
+</div>	
+</div>
+</div>
+{% endblock %}

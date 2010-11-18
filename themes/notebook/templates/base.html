@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://gmpg.org/xfn/11">
+{%mf head%}
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="google-site-verification" content="8gtV8Ua3aCgYnDjlr8v4JvCDufwRCKywoYHKT1htm9I" />
+{% block head_block %}{% endblock %}
+<title>{% block title %}{{ blog.title}}{% endblock %}</title>
+<link rel="stylesheet" href="/themes/{{ blog.theme_name }}/style.css" type="text/css" media="all" />
+<link rel="stylesheet" href="/themes/{{ blog.theme_name }}/print.css" type="text/css" media="print" />
+<link rel="stylesheet" href="/themes/{{ blog.theme_name }}/more.css" type="text/css" media="all" />
+<link rel="alternate" type="application/rss+xml" title="{{ blog.title }} RSS Feed" href="{{ blog.feedurl }}" />
+<link href="/static/wlwmanifest.xml" type="application/wlwmanifest+xml" rel="wlwmanifest"/>
+<script type="text/javascript" src="/static/js/jquery-1.3.2.min.js"></script>
+<!--[if lt IE 7]>
+        <script type="text/javascript" src="/themes/{{ blog.theme_name }}/js/unitpngfix.js"></script>
+<![endif]-->
+{%endmf%}
+</head>
+<body>
+<center>
+  <div id="header">
+    <div id="headerimg">
+      <div id="logo"><a href="{{blog.baseurl}}/" title="{{ blog.subtitle|escape}}">{{blog.title}}</a></div>
+      <!--<div class="description">{{ blog.subtitle|escape}}</div>-->
+    </div>
+  </div>
+</center>
+<center>
+  <div id="menubg">
+    <div id="nav">
+      <ul>
+        <li class="page_item"><a href="{{ blog.baseurl }}" title="Home">Home</a></li>
+        <li class="page_item page-item-2"><a href="{{ blog.baseurl }}/about" title="About">About</a></li>
+        <li class="page_item page-item-17"><a href="{{ blog.baseurl }}/contact" title="Contact">Contact</a></li>
+      </ul>
+    </div>
+    <!-- /nav -->
+    <div id="search-form">
+      <form method="get" id="searchform" action="http://www.google.com/search">
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+        <input name="as_sitesearch" value="{{blog.domain}}" type="hidden" />
+      </form>
+    </div>
+  </div>
+</center>
+<!--/header -->
+<div id="page"> {%block content %}
+  {%endblock%}
+  <div id="sidebar"> {% include "sidebar.html" %} </div>
+  <!--/sidebar -->
+  <div id="footer">
+    <!--recent comments start -->
+    <div class="footer-recent-comments">
+      <h4>Recent Comments</h4>
+      <ul>
+        {% for comment in recent_comments %}
+        <li><strong><a href="/{{comment.entry.link}}#comment-{{comment.key.id}}">{{comment.author}}</a></strong>:{{comment.shortcontent}}...</li>
+        {%endfor%}
+      </ul>
+    </div>
+    <!--recent comments end -->
+    <!--about text start -->
+    <div class="footer-about">
+     {% include "about.html" %}
+    </div>
+    <!--about text end -->
+    <hr class="clear" />
+  </div>
+  <!--/footer -->
+</div>
+<!--/page -->
+</body>
+</html>

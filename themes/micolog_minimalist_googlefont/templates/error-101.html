@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+{% include "sidebar.html" %}
+<div id="wrapper" class="clearfix" > 
+<div id="maincol" >
+<h1>错误</h1>
+<p>请输入姓名，Email和评论内容！</p>
+ <p><input name="submit" type="button"  id="submit" tabindex="5" value="Go Back" onClick="history.back(-1)" /></p>
+</div>
+</div>
+{% endblock %}

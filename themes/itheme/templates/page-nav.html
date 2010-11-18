@@ -1,0 +1,13 @@
+<div class="page-nav">
+	{% if show_prev %}
+		<span class="previous-entries">
+			<a href="/page/{{ pageindex|add:"-1" }}">上一页</a>
+		</span>
+	{% endif %}
+	
+	{% if show_next %}
+	<span class="next-entries">
+		<a href="/page/{{ pageindex|add:"1" }}">下一页</a>
+	</span>
+	{% endif %}
+</div>

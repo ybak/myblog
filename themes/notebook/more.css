@@ -1,0 +1,79 @@
+/*  
+Theme Name: xfox
+Description: xfox theme designed by xfox.
+Version: 1.0
+Author: xfox
+	This theme was designed and built xfox.
+
+	By downloading and using this theme, you agree to the following terms:
+    - You may NOT resell this theme
+    - The footer links must be kept intact
+    - You may use this theme for personal or commercial projects
+    - You may modify, translate or distribute
+
+*/
+  #wpthemedemobar {
+  position:absolute;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:23px;
+  padding:0px;
+  margin:0px;
+  padding-top:7px;
+  background-color:#f1f1f1;
+  border-bottom:1px solid #cccccc;
+  color:#444444;
+  font-weight: bold;
+  font-family: tahoma;
+  font-size: 11px;
+  text-align:center;
+  z-index:100
+  }
+  
+  #wpthemedemobar a,#wpthemedemobar a:link,#wpthemedemobar a:visited {
+  color:#444444;
+  font-weight: bold;
+  font-family: tahoma;
+  font-size: 11px;
+  }
+  
+  .wptdb_themename { border-bottom:1px solid #cccccc ; }
+  .wptdb_cancel { position:absolute; top:3px; left:5px; border:0px; }
+  .wptdb_current { margin:0 auto }
+  .wptdb_popularity { color:#888888;font-weight:normal }
+
+  .wptdb_jumpbar_wrapper {
+  position:absolute;
+  top:3px;
+  right:25px;
+  }
+  
+  .wptdb_jumpbar_wrapper select { 
+  background-color:#f1f1f1;
+  border:1px solid #cccccc;
+  font-size:11px;
+  font-weight:bold;
+  font-family:tahoma;
+  color:#333333;
+  vertical-align:top;
+  margin-top:3px;
+  }
+  
+  .wptdb_jumpbar_wrapper select option {
+  padding:1px;
+  }
+  
+  .wptdb_jumpbar_wrapper input {
+  -moz-border-radius:5px; 
+  background-color:#2792b9;
+  border:1px solid #cccccc;
+  font-size:11px;
+  font-weight:bold;
+  font-family:tahoma;
+  color:#fff;
+  margin-left:5px;
+  padding:4px;
+  padding-left:9px;
+  padding-right:9px;
+  }

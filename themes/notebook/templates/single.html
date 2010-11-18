@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %} {{entry.title}} - {{blog.title}} {% endblock %}
+{% block head_block %}
+{% if entry %}
+{%if entry.strtags%}
+<meta name="Keywords" content="{{entry.strtags}}">
+{%endif%}
+{%if entry.excerpt%}
+<meta name="Description" content="{{entry.excerpt}}">
+{%endif%}
+{% endif %}
+{% endblock %}
+{% block content%}
+<div id="content"> {% if entry %}
+  <div class="post-{{entry.key}}">
+    <div class="post-title">
+      <h2>{{entry.title}}</h2>
+    </div>
+    <div class="infor">Author: {{ entry.author }} AddTime:{{entry.date|datetz:"Y-m-d"}} {%if self.is_admin%}<a href="{{entry.edit_url}}"> | Edit</a> {%endif%}</div>
+    <div class="entry"> {{ entry.content }} </div>
+    {% include "comments.html" %} </div>
+</div>
+<!--/content -->
+{% endif %}
+{% endblock %} 

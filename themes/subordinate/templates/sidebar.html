@@ -1,0 +1,174 @@
+<div id="sidebar">
+<!-- sidebar north START -->
+<div id="northsidebar" class="sidebar">
+	<!-- feeds -->
+	<div class="widget widget_feeds">
+		<div class="content">
+			<div id="extlinks">
+			<a id="feedrss" title="Subscribe dfliu's Blog" href="http://feeds.feedburner.com/LifeWithBugs"></a>
+<a id="twitter" title="Follow Me on Twitter" href="https://twitter.com/heiyeliu"></a>
+<a id="facebook" title="Facebook Profile" href="http://www.facebook.com/profile.php?id=100001570960929"></a>
+<a id="googleprofile" title="Google Profile" href="https://www.google.com/profiles/dolfliu"></a>
+
+<a id="googlereader" title="Google Reader Shared Stuff" href="https://www.google.com/reader/shared/dolfliu"></a>
+<a id="livespace" title="My Live Space" href="http://dolfliu.spaces.live.com/"></a>
+<a id="picasa" title="Picasa Album" href="http://picasaweb.google.com/dolfliu"></a>
+<a id="baiduhi" title="My Baidu Hi" href="http://hi.baidu.com/heiyeliu"></a>
+
+			<div class="fixed"></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- showcase -->
+
+        <div id="aboutme" class="widget widget_aboutme">
+            <h3>About Me</h3>
+            <ul>
+            {{blog.aboutme}}
+            </ul>
+        </div>
+		
+	<!-- showcase -->
+	<div id="blog-notice" class="widget widget_blog_notice">		
+    <h3>Blog Notice</h3>
+    <ul>
+		{{blog.blognotice}}
+	</ul>
+	</div>
+	
+	
+	
+	<!-- showcase -->
+	<div id="adsidebar" class="widget widget_adsidebar">		
+    <h3>Advertisement</h3>
+    <ul>
+		{{blog.adsidebar}}
+	</ul>
+	</div>
+	
+	<div id="recent-posts-2" class="widget widget_recent_entries">		
+    <h3>Latest Posts</h3>
+    <ul>
+        {% for entry in blog.recentposts %}
+		<li><a href="/{{entry.link|escape}}" title="{{entry.title|escape}}">{{entry.title|escape}}({{entry.readtimes}})</a></li>
+        {%endfor%}
+	</ul>
+	</div>
+
+	<div id="hot-posts" class="widget widget_hot_entries">		
+    <h3>Hot Posts</h3>
+    <ul>
+        {% for entry in blog.hotposts %}
+		<li><a href="/{{entry.link|escape}}" title="{{entry.title|escape}}">{{entry.title|escape}}({{entry.readtimes}})</a></li>
+        {%endfor%}
+	</ul>
+	</div>
+
+	<div id="recentcomments" class="widget widget_recentcomments">
+    <h3>Recent Comments</h3>
+    <ul>
+    {% for comment in recent_comments %}
+<li class="rc_item">
+<div class="rc_avatar"><img alt="" src="{{comment.gravatar_url}}" class="avatar avatar-32 photo" height="32" width="32"></div>
+<div class="rc_info"><span class="author_name">{%if comment.weburl %}<a target="_blank" href="{{comment.weburl}}" class="url" rel="external nofollow">{{comment.author}}</a>{% else %}{{comment.author}}{%endif%} </span>#{{comment.date|datetz:"M d, Y"}}</div>
+<div class="rc_excerpt"><a href="/{{comment.entry.link|escape}}#comment-{{comment.key.id}}">{{comment.shortcontent}}...</a></div>
+</li>
+
+{%endfor%}
+    </ul>
+    </div>
+	
+</div>
+<!-- sidebar north END -->
+
+<div id="centersidebar">
+	<!-- sidebar east START -->
+	<div id="eastsidebar" class="sidebar">
+    	<div id="categories-368151121" class="widget widget_categories">
+      <h3>Categories</h3>
+        <ul>
+            <select name="categories-dropdown" onchange="document.location.href=this.options[this.selectedIndex].value;">
+            <option value="">Select Categore</option>
+            {%for cate in categories%}
+            <option value="/category/{{cate.slug}}">{{cate.name}}({{cate.count}})</option>
+            {%endfor%}
+        </select>
+    	</ul>
+        </div>	
+    </div>
+	<!-- sidebar east END -->
+
+	<!-- sidebar west START -->
+	<div id="westsidebar" class="sidebar">
+    	<div id="archives-2" class="widget widget_archives">
+		
+		<h3>Archives</h3>
+		<ul>
+		<select name="archive-dropdown" onchange="document.location.href=this.options[this.selectedIndex].value;">
+        <option value="">Select Month</option>
+        {%for archive in archives%}
+        <option value="/{{archive.year}}/{{archive.month}}">{{archive.monthyear}} ({{archive.entrycount}})</option>
+        {%endfor%}
+        </select>
+		</ul>
+        </div>	
+    </div>
+    
+    
+	<!-- sidebar west END -->
+	<div class="fixed"></div>
+	<div class="widget">
+	    <h3>Tag Cloud</h3>
+	    {%mf tagcloud%}{%endmf%}
+		{% for t in alltags %}
+		<!-- <a title="{{ t.tagcount }} pages" href="/tag/{{t.tag|urlencode}}"><span style='font-size:{{ t.tagcount|add:9 }}px;'>{{t.tag}}</span></a> -->
+		{%endfor%}
+	</div>
+</div>
+
+<!-- sidebar south START -->
+<div id="southsidebar" class="sidebar">
+
+    <div id="shared items" class="widget widget_blogwidget">
+				<!-- <h2>My Shared items </h2> -->
+				You can delelte following or replace it with your ads,see detail in readme.txt.你可以替换或者删除下面的广告，详见readme.txt
+				<p align="center">
+                    <script type="text/javascript"><!--
+                    google_ad_client = "pub-3779579820082790";
+                    /* 250x250, created 10/20/10 */
+                    google_ad_slot = "9904973105";
+                    google_ad_width = 250;
+                    google_ad_height = 250;
+                    //-->
+                    </script>
+                    <script type="text/javascript"
+                    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+                    </script>
+                </p>
+    </div>
+    
+    <div id="hit-counter" class="widget widget_blogwidget">
+			<h3>Hit Counter</h3>
+<ul><p align="center"><a href="http://s06.flagcounter.com/more/9RAj"><img src="http://s06.flagcounter.com/count/9RAj/bg=FFFFFF/txt=000000/border=CCCCCC/columns=2/maxflags=12/viewers=0/labels=0/pageviews=1/" alt="free counters" border="0"></a></p></ul>
+	</div>
+    <div id="linkcat-2" class="widget widget_links">
+    <h3>Blog Rolls</h3>
+    	<ul class='xoxo blogroll'>
+            {%for link in blogroll%}
+            <li><a href="{{link.href}}" target="_blank">{{link.linktext}}</a></li>
+            {%endfor%}
+    	</ul>
+    </div>
+</div>
+
+<!-- sidebar south END -->
+</div>
+
+
+
+
+
+
+
+
