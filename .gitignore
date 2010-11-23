@@ -5,6 +5,5 @@
 .bzrignore
 psd
 config.py
-app.yaml
 /.pydevproject
 /.project
