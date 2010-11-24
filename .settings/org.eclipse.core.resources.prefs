@@ -1,7 +1,8 @@
-#Tue Nov 23 11:01:52 CST 2010
+#Wed Nov 24 13:59:56 CST 2010
 eclipse.preferences.version=1
 encoding/<project>=UTF-8
 encoding/admin.py=utf-8
 encoding/api_rpc.py=utf-8
 encoding/base.py=utf-8
 encoding/blog.py=utf-8
+encoding/model.py=utf-8
