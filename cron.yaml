@@ -1,0 +1,5 @@
+cron:
+- description: daily job
+  url: /tasks/auto/gym
+  schedule: every 20 minutes
+  timezone: Asia/Shanghai
