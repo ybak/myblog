@@ -1,5 +1,5 @@
 cron:
 - description: fetch lastest tweet
   url: /cron/updatetweets
-  schedule: every 2 minutes
+  schedule: every 10 minutes
   timezone: Asia/Shanghai

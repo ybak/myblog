@@ -18,7 +18,7 @@ class UploadTweets(BaseRequestHandler):
         tweet.date = timeline.created_at
         tweet.put()
 
-application = webapp.WSGIApplication([('/cron/updatetweets', UploadTweets)],debug=True) 
+application = webapp.WSGIApplication([('/cron/updatetweets', UploadTweets)],debug=False) 
  
 def main(): 
     run_wsgi_app(application) 
