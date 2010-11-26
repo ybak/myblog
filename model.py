@@ -817,7 +817,9 @@ class Media(db.Model):
 	def size(self):
 		return len(self.bits)
 
-
+class Tweet(db.Model):
+	text =db.StringProperty()
+	date=db.DateTimeProperty()
 
 class OptionSet(db.Model):
 	name=db.StringProperty()

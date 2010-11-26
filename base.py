@@ -8,6 +8,7 @@ from google.appengine.ext import db
 from google.appengine.ext.webapp import template
 from google.appengine.api import memcache
 from google.appengine.api import urlfetch
+from model import Tweet
 ##import app.webapp as webapp2
 os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
 from django.utils.translation import  activate
@@ -243,6 +244,7 @@ class BaseRequestHandler(webapp.RequestHandler):
 		self.loginurl=users.create_login_url(self.request.uri)
 		self.logouturl=users.create_logout_url(self.request.uri)
 		self.is_admin = users.is_current_user_admin()
+		self.tweet = Tweet.all().get();
 
 		if self.is_admin:
 			self.auth = 'admin'
@@ -268,7 +270,7 @@ class BaseRequestHandler(webapp.RequestHandler):
 
 
 
-		self.template_vals = {'self':self,'blog':self.blog,'current':self.current}
+		self.template_vals = {'self':self,'blog':self.blog,'current':self.current,'tweet':self.tweet}
 
 	def __before__(self,*args):
 		pass

@@ -27,6 +27,9 @@ handlers:
 
 - url: /themes/.*
   script: theme_files.py
+  
+- url: /cron/.*
+  script: cron.py
 
 - url: /myadmin/.*|/myadmin
   script: $PYTHON_LIB/google/appengine/ext/admin

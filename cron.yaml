@@ -1,5 +1,5 @@
 cron:
-- description: daily job
-  url: /tasks/auto/gym
-  schedule: every 20 minutes
+- description: fetch lastest tweet
+  url: /cron/updatetweets
+  schedule: every 2 minutes
   timezone: Asia/Shanghai
