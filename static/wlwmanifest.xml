@@ -13,10 +13,10 @@
     <imageUrl>favicon.ico</imageUrl>
     <watermarkImageUrl>images/wlw/wp-watermark.png</watermarkImageUrl>
     <homepageLinkText>View site</homepageLinkText>
-    <adminLinkText>myadmin</adminLinkText>
+    <adminLinkText>admin</adminLinkText>
     <adminUrl>
       <![CDATA[ 
-			{blog-postapi-url}/../myadmin/ 
+			{blog-postapi-url}/../admin/ 
 		]]>
     </adminUrl>
   </weblog>

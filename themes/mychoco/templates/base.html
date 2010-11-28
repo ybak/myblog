@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head profile="http://gmpg.org/xfn/11">
+        {%mf head%}
+	        <meta http-equiv="Content-Type" content="text/html;charset=utf-8;" />
+			<meta name="google-site-verification" content="BmX-fjWgPK_Vh1hNjCINcm4FZgcxr3RqSHC2zmom-Z4" />
+	        <title>{% block title %} {{ blog.title}}{% endblock %}</title>
+	        <link rel="alternate" type="application/rss+xml" title="{{ blog.title }} RSS Feed" href="{{ blog.feedurl }}" />
+	        <script type="text/javascript" src="/static/js/jquery-1.3.2.min.js"></script>
+	        <script type="text/javascript" src="/themes/{{ blog.theme_name }}/js/fn.js"></script>
+			<script type="text/javascript" src="/static/js/googleAnalytics.js"></script>
+	<!-- Theme --> 
+	        <link rel="stylesheet" href="/themes/{{ blog.theme_name }}/style.css" type="text/css" media="screen" />
+	        <link rel="stylesheet" href="/themes/{{ blog.theme_name }}/themes/default/style.css" type="text/css" media="screen" />
+	        {% block head_block %}{% endblock %}
+        {%endmf%}
+    </head>
+    <body  class="home blog" style="background: #3A2820;">
+	<!-- Page -->
+        <div id="page">
+        	<!-- Header -->
+			<div id="header">
+				<!-- Logo -->
+	            <div id="logo">
+	                <h1><a href="{{blog.baseurl}}/" title="{{blog.title}}">{{blog.title}}</a></h1>
+					<div class="description">{{blog.subtitle}}</div>
+	            </div>
+				<!-- END Logo -->
+				<!-- Main Navigation -->
+				<div id="nav">
+					<ul> 
+			        <li class="">
+			            <a href="http://wp-themes.com/?page_id=2"><span>About</span></a>
+			        </li>
+			        <li class="has_dropdown">
+			            <a href="{{blog.baseurl}}"><span><span>Parent Page</span></span></a>
+			            <div class="dropdown dd-level-1">
+			                <ul><li><a href="http://wp-themes.com/?page_id=49">Sub-page</a></li></ul>
+			            </div>
+			        </li>
+			        </ul>
+				</div>
+				<!-- END Main Navigation -->
+				<div class="cl">&nbsp;</div>
+			</div>
+			<!-- END Header -->
+			<!-- Main Block -->
+		    <div id="main">
+		    	<!-- RSS icon -->
+				<a href="{{blog.feedurl}}" id="rss-link">RSS</a>
+				<div id="main-top">
+					<div id="main-bot">
+						<div class="cl">&nbsp;</div>
+						<!-- Content -->
+						<div id="content">
+			                {%block content %}{%endblock%}
+	        			</div>
+						<div class="cl">&nbsp;</div>
+					</div>
+				</div>
+			</div>
+			<!-- Footer -->
+		    <div id="footer">
+		        {%mf footer%}
+		        <div class="footer">
+		            <p class="fooleft">
+		                {{blog.title}} is proudly powered by <a href="http://xuming.net">Micolog</a>. 
+		            </p>
+					<p>ChocoTheme by <a href="http://cssmayo.com">.css{mayo}</a> | powered by WordPress</p>
+		        </div>
+		        {%endmf%}
+		    </div>
+			<!-- END Footer -->
+		</div>
+		<!-- END Page -->
+    </body>
+</html>

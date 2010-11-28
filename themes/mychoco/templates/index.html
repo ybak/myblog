@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content%}
+{% if entries %}
+	{% for entry in entries %}
+		<div class="post-{{entry.key}} post type-post hentry category-uncategorized tag-boat tag-lake"> 
+	        <h2><a href="/{{ entry.link }}" rel="bookmark" title="Permanent Link to {{entry.title}}">{{entry.title}}</a></h2>
+			<div class="date">
+				<div class="bg">
+					<span class="day">{{entry.date|date:"d"}}</span>
+					<span>{{entry.date|date:"M"}}</span>
+				</div>
+			</div>
+			
+			<div class="entry">
+				{{entry|excerpt_more:"(Read More..)"}}
+				<div class="cl">&nbsp;</div>
+			</div>
+			
+			<div class="meta">
+				<div class="bg">
+					<span class="comments-num"><a href="/{{entry.link}}#comments">({{entry.commentcount}})</a></span>
+                    <p>
+                        Posted in {% if entry.categories %}{%for cate in entry.categories%} <a href="/category/{{cate.slug}}">{{cate.name}}</a>
+                        {%endfor%} {% else %}未分类 {% endif %}
+                    </p>
+				</div>
+				<div class="bot">&nbsp;</div>
+			</div>
+		</div>
+	{% endfor %}
+{% else %}
+	<h2 class="center">Not Found</h2>
+	<p class="center">Sorry, but you are looking for something that isn't here.</p>
+{% endif %}
+{% endblock %}
+
+
