@@ -1,34 +1,129 @@
-<div class="sidebar">
+<div id="sidebar">
 <ul>
-<li>
-<h2>Recent Comments</h2>
-        <ul>
-        {% for comment in recent_comments %}
-        <li><a href="/{{comment.entry.link}}#comment-{{comment.key.id}}">{{comment.author}}:{{comment.shortcontent}}...</a> </li>
-        {%endfor%}
-        </ul>
-        </li>
-
-<li>
- <h2>Categories</h2>
-  <ul>
- 	{%for cate in categories%}
-  <li>	<a href="/category/{{cate.slug|urlencode}}">{{cate.name}}({{cate.count}})</a></li>
- 	{%endfor%}
- 	</ul>
-
-</li>
-
-<li>
-<h2>Blog roll</h2>
-<ul>
-{%for link in blogroll%}
-<li><a href="{{link.href}}">{{link.linktext}}</a></li>
-{%endfor%}
-
+    <li>
+        <form action="http://www.google.com/custom" id="searchform" method="get" target="google_window">
+            <label for="s" class="screen-reader-text">
+                Search
+            </label>
+            <div class="field-place">
+                <input type="text" class="field" id="s" name="s" value=""/><input type="submit" class="button" value="Search" id="searchsubmit"/>
+            </div>
+        </form>
+    </li>
 </ul>
-</li>
+<ul role="navigation">
+    <li class="pagenav">
+        <h2>Pages</h2>
+        <ul>
+            <li class="page_item page-item-2">
+                <a href="http://wp-themes.com/?page_id=2" title="About">About</a>
+            </li>
+            <li class="page_item page-item-46">
+                <a href="http://wp-themes.com/?page_id=46" title="Parent Page">Parent Page</a>
+                <ul class='children'>
+                    <li class="page_item page-item-49">
+                        <a href="http://wp-themes.com/?page_id=49" title="Sub-page">Sub-page</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <h2>Archives</h2>
+        <ul>
+            <li>
+                <a href='http://wp-themes.com/?m=200810' title='October 2008'>October 2008</a>
+            </li>
+            <li>
+                <a href='http://wp-themes.com/?m=200809' title='September 2008'>September 2008</a>
+            </li>
+            <li>
+                <a href='http://wp-themes.com/?m=200806' title='June 2008'>June 2008</a>
+            </li>
+        </ul>
+    </li>
+    <li class="categories">
+        <h2>Categories</h2>
+        <ul>
+            <li class="cat-item cat-item-5">
+                <a href="http://wp-themes.com/?cat=5" title="View all posts filed under Parent">Parent</a>
+                (1)
+                <ul class='children'>
+                    <li class="cat-item cat-item-6">
+                        <a href="http://wp-themes.com/?cat=6" title="View all posts filed under First Child Category">First Child Category</a>
+                        (1)
+                    </li>
+                    <li class="cat-item cat-item-7">
+                        <a href="http://wp-themes.com/?cat=7" title="View all posts filed under Second Child Category">Second Child Category</a>
+                        (1)
+                        <ul class='children'>
+                            <li class="cat-item cat-item-8">
+                                <a href="http://wp-themes.com/?cat=8" title="View all posts filed under One Grandchild Category">One Grandchild Category</a>
+                                (1)
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li class="cat-item cat-item-1">
+        <a href="http://wp-themes.com/?cat=1" title="View all posts filed under Uncategorized">Uncategorized</a>
+        (6)
+    </li>
+</ul>
 
-
+<ul>
+    <li id="linkcat-2" class="linkcat">
+        <h2>Blogroll</h2>
+        <ul class='xoxo blogroll'>
+            <li>
+                <a href="http://wordpress.org/development/">Development Blog</a>
+            </li>
+            <li>
+                <a href="http://codex.wordpress.org/">Documentation</a>
+            </li>
+            <li>
+                <a href="http://wordpress.org/extend/plugins/">Plugins</a>
+            </li>
+            <li>
+                <a href="http://wordpress.org/extend/ideas/">Suggest Ideas</a>
+            </li>
+            <li>
+                <a href="http://wordpress.org/support/">Support Forum</a>
+            </li>
+            <li>
+                <a href="http://wordpress.org/extend/themes/">Themes</a>
+            </li>
+            <li>
+                <a href="http://planet.wordpress.org/">WordPress Planet</a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <h2>Meta</h2>
+        <ul>
+            <li>
+                <a href="http://wp-themes.com/wp/wp-login.php">Log in</a>
+            </li>
+            <li>
+                <a href="http://validator.w3.org/check/referer" title="This page validates as XHTML 1.0 Transitional">Valid 
+                    <abbr title="eXtensible HyperText Markup Language">
+                        XHTML
+                    </abbr>
+                </a>
+            </li>
+            <li>
+                <a href="http://gmpg.org/xfn/">
+                    <abbr title="XHTML Friends Network">
+                        XFN
+                    </abbr>
+                </a>
+            </li>
+            <li>
+                <a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress</a>
+            </li>
+        </ul>
+    </li>
 </ul>
 </div>
