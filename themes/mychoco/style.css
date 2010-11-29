@@ -37,7 +37,7 @@ div.textarea textarea { height: 125px; }
 .alignright { float: right; }
 .alignleft { float: left; }
 
-p img { padding: 0; max-width: 100%; }
+p img { padding: 0; max-width: 96%; }
 img.centered { display: block; margin-left: auto; margin-right: auto; }
 img.alignright { margin: 0 0 5px 15px; display: inline; }
 img.alignleft { margin: 0 15px 5px 0; display: inline; }
