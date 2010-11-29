@@ -8,7 +8,7 @@ from weibopy.auth import BasicAuthHandler
 
 class UploadTweets(BaseRequestHandler):
     def get(self):
-        auth = BasicAuthHandler("ybak@sina.com", "520811")
+        auth = BasicAuthHandler("user", "password")
         api = API(auth, source="3990552168")
         timeline = api.user_timeline(count=1, page=1)[0]
         tweet = Tweet.all().get()
