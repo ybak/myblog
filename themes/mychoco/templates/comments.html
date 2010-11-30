@@ -33,65 +33,37 @@
             
 			<div class="cl">&nbsp;</div>
             <input name="submit" type="submit" id="submit" tabindex="5" class="button" value="提交评论" />
-			
             <input type="hidden" name="key" value="{{entry.key}}">
             <input type="hidden" name="checknum" id="checknum" value="{{checknum1}}+{{checknum2}}" />
 			<div class="cl">&nbsp;</div>
 		</form>
 	</div>
+{% else %}
+    <p class="nocomments">评论已关闭</p>
 {% endif %}
 
 {% if entry.comments.count%}
 	<div id="comments">
         <ol class="commentlist">
-            <li class="comment even thread-even depth-1 comment">
-                <div class="comment-body" id="comment-1">
-                    <img alt='' src='http://0.gravatar.com/avatar/?d=http://wp-themes.com/wp-content/themes/chocotheme/images/avatar.gif&amp;s=70' class='avatar avatar-70 photo avatar-default' height='70' width='70' />
-                    <p class="author">
-                        <a href='http://wordpress.org/' rel='external nofollow' class='url'>Mr WordPress</a>
-                    </p>
-                    <p class="comment-meta">
-                        June 4, 2008 at 10:40 pm 
-                    </p>
-                    <div class="comment-content">
-                        <p>
-                            Hi, this is a comment.
-                            <br/>
-                            To delete a comment, just log in and view the post&#039;s comments. There you will have the option to edit or delete them.
+            {%for comment in comments%}
+                <li class="comment even thread-even depth-1 comment">
+                    <div class="comment-body" id="comment-{{comment.key.id}}">
+                        <img alt='' src='{{comment.gravatar_url}}' class='avatar avatar-70 photo avatar-default' height='70' width='70' />
+                        <p class="author">
+                            <a href='{{comment.weburl}}' rel='external nofollow' class='url'>{{comment.author}}</a>
                         </p>
-                        <div class="alignleft">
+                        <p class="comment-meta">
+                            {{comment.date|datetz:"Y-m-d"}} at {{comment.date|datetz:"H:i"}}
+                        </p>
+                        <div class="comment-content">
+                          {{comment.content}}
+                        </div>
+                        <div class="cl">
+                            &nbsp;
                         </div>
                     </div>
-                    <div class="reply">
-                    </div>
-                    <div class="cl">
-                        &nbsp;
-                    </div>
-                </div>
-            </li>
-            <li class="comment odd alt thread-odd thread-alt depth-1 comment">
-                <div class="comment-body" id="comment-509">
-                    <img alt='' src='http://1.gravatar.com/avatar/582b66ad5ae1b69c7601a990cb9a661a?s=70&amp;d=http%3A%2F%2Fwp-themes.com%2Fwp-content%2Fthemes%2Fchocotheme%2Fimages%2Favatar.gif%3Fs%3D70&amp;r=PG' class='avatar avatar-70 photo' height='70' width='70' />
-                    <p class="author">
-                        <a href='http://josephscott.org/' rel='external nofollow' class='url'>Joseph Scott</a>
-                    </p>
-                    <p class="comment-meta">
-                        November 5, 2008 at 7:38 pm 
-                    </p>
-                    <div class="comment-content">
-                        <p>
-                            Need a comment with a real Gravatar.
-                        </p>
-                        <div class="alignleft">
-                        </div>
-                    </div>
-                    <div class="reply">
-                    </div>
-                    <div class="cl">
-                        &nbsp;
-                    </div>
-                </div>
-            </li>
+                </li>
+             {%endfor%}
         </ol>
 	</div>
 {%endif%}
