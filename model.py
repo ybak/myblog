@@ -817,6 +817,10 @@ class Media(db.Model):
 	def size(self):
 		return len(self.bits)
 
+class SocialNetwork(db.Model):
+	name =db.StringProperty()
+	requesttoken =db.StringProperty()
+
 class Tweet(db.Model):
 	text =db.StringProperty()
 	date=db.DateTimeProperty()
