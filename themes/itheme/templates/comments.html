@@ -38,8 +38,8 @@
 		
 		{%ifequal blog.comment_check_type 1%}
 			<p id="checkarea">
-				<input type="text" name="url" id="url" value="" size="22" tabindex="4">
-				<label for="url"><strong>请输入计算结果：<iframe src="/checkcode/"  style="width:80px;height:25px;border:0;"SCROLLING=no></iframe></strong></label>
+				<input type="text" name="checkret" id="checkret" value="" size="22" tabindex="4">
+				<label for="checkret"><strong>请输入计算结果：<iframe src="/checkcode/"  style="width:80px;height:25px;border:0;"SCROLLING=no></iframe></strong></label>
 			</p>
 		{%endifequal%}
 		{%ifequal blog.comment_check_type 2%}

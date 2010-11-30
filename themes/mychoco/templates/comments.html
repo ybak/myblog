@@ -12,8 +12,8 @@
 				<label for="url">Website</label>
 				<div class="field"><input type="text" name="url" id="url" value="" tabindex="3" /></div>
                 {%ifequal blog.comment_check_type 1%}
-    				<label for="url"><strong>请输入计算结果：<iframe src="/checkcode/"  style="width:80px;height:25px;border:0;"SCROLLING=no></iframe></strong></label>
-    				<div class="field"><input type="text" name="url" id="url" value="" size="22" tabindex="4"></div>
+    				<label for="checkret"><strong>请输入计算结果：<iframe src="/checkcode/"  style="width:80px;height:25px;border:0;"SCROLLING=no></iframe></strong></label>
+    				<div class="field"><input type="text" name="checkret" id="checkret" value="" size="22" tabindex="4"></div>
                 {%endifequal%}
                 {%ifequal blog.comment_check_type 2%}
                     <div id="checkarea" style="padding-bottom:15px">
