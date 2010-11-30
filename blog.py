@@ -456,6 +456,10 @@ class SitemapHandler(BaseRequestHandler):
 		self.render2('views/sitemap.xml',{'urlset':urls})
 
 
+class AboutHandler(BaseRequestHandler):
+	def get(self,slug=None):
+		self.render('about',{})
+		
 class Error404(BaseRequestHandler):
 	@cache(time=36000)
 	def get(self,slug=None):
@@ -709,6 +713,7 @@ def main():
 			('/feed', FeedHandler),
 			('/feed/comments',CommentsFeedHandler),
 			('/sitemap', SitemapHandler),
+			('/about', AboutHandler),
 			('/post_comment',Post_comment),
 			('/page/(?P<page>\d+)', MainPage),
 			('/category/(.*)',entriesByCategory),

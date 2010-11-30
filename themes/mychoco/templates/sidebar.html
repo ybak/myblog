@@ -16,15 +16,7 @@
         <h2>Pages</h2>
         <ul>
             <li class="page_item page-item-2">
-                <a href="http://wp-themes.com/?page_id=2" title="About">About</a>
-            </li>
-            <li class="page_item page-item-46">
-                <a href="http://wp-themes.com/?page_id=46" title="Parent Page">Parent Page</a>
-                <ul class='children'>
-                    <li class="page_item page-item-49">
-                        <a href="http://wp-themes.com/?page_id=49" title="Sub-page">Sub-page</a>
-                    </li>
-                </ul>
+                <a href="{{blog.baseurl}}/about" title="About">About</a>
             </li>
         </ul>
     </li>
@@ -65,7 +57,11 @@
         <h2>Meta</h2>
         <ul>
             <li>
-                <a href="http://wp-themes.com/wp/wp-login.php">Log in</a>
+            	{%if self.is_login%}
+					<a href="{{self.logouturl}}">Logout</a>
+				{%else%}
+					<a href="/admin">Login</a>
+				{%endif%}
             </li>
             <li>
                 <a href="http://validator.w3.org/check/referer" title="This page validates as XHTML 1.0 Transitional">Valid 
@@ -73,16 +69,6 @@
                         XHTML
                     </abbr>
                 </a>
-            </li>
-            <li>
-                <a href="http://gmpg.org/xfn/">
-                    <abbr title="XHTML Friends Network">
-                        XFN
-                    </abbr>
-                </a>
-            </li>
-            <li>
-                <a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress</a>
             </li>
         </ul>
     </li>
