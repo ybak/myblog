@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %} {{category.name}} - {{blog.title}} {% endblock %}
+
+{%block content%}
+	{%for entry in entries%}
+        <h2 class="pagetitle">
+                                分类 ：{{category.name}}
+        </h2>
+        <div class="list-page">
+            {% for entry in entries %}
+                {% include "entry.html" %}
+            {% endfor %}
+        </div>
+	{%endfor%}
+{%endblock%}

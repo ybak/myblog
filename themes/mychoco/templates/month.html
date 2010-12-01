@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %} {{year}}年{{month}}月 - {{blog.title|escape}} {% endblock %}
+
+
+{% block content %}
+    {% if entries %}
+		<h2 class="pagetitle">
+				Archive for {{year}}年{{month}}月
+		</h2>
+		<div class="list-page">
+            {% for entry in entries %}
+                {% include "entry.html" %}
+            {% endfor %}
+		</div>
+    {% endif %}
+{% endblock %}

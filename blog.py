@@ -456,7 +456,7 @@ class SitemapHandler(BaseRequestHandler):
 		self.render2('views/sitemap.xml',{'urlset':urls})
 
 
-class AboutHandler(BaseRequestHandler):
+class AboutHandler(BasePublicPage):
 	def get(self,slug=None):
 		self.render('about',{})
 		
