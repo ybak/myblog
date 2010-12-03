@@ -108,7 +108,7 @@ h1 a:hover { text-decoration: none; }
 
 .list-page #searchform { margin-top: 20px; }
 
-#sidebar { float: right; display: inline; width: 204px; margin-top: 80px; }
+#sidebar { float: right; display: inline; width: 204px; margin-top: 80px; color: #FFE6A8;}
 .widget_calendar { width: 204px }
 #sidebar a { color: #FFE6A8; }
 

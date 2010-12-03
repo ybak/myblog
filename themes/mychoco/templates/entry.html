@@ -1,5 +1,5 @@
 <div class="post-{{entry.key}} post type-post hentry category-uncategorized tag-wordpress">
-    <h2>{{entry.title}}</h2>
+    <h2><a href="/{{entry.link}}" title="{{entry.title}}">{{entry.title}}</a></h2>
     <div class="date">
         <div class="bg">
             <span class="day">{{entry.date|date:"d"}}</span>
@@ -14,7 +14,10 @@
     
     <div class="meta">
         <div class="bg">
-            <span class="comments-num"><a href="/{{entry.link}}#comments">({{entry.commentcount}})</a></span>
+            <span class="comments-num">
+                <a href="/{{entry.link}}#comments">({{entry.commentcount}})</a>
+                {%if self.is_admin%} | <a href="{{entry.edit_url}}" >Edit</a>{%endif%}
+            </span>
             <p>
                 Posted in {% if entry.categories %}{%for cate in entry.categories%} <a href="/category/{{cate.slug}}">{{cate.name}}</a>
                 {%endfor%} {% else %}未分类 {% endif %}
